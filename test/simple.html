@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Example: Star Wars Release Dates</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+		<div id="container">
+			<h1>Example: Star Wars Release Dates</h1>
+
+			<div id="timeframe"></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="/lib/timeframe.js"></script>
+		<script>
+
+		var starWarsFilms = {
+			name: "Star Wars Films",
+			color: "#000000",
+			events: [
+				{
+					name: "A New Hope",
+					date: "1977-05-25"
+				},
+				{
+					name: "The Empire Strikes Back",
+					date: "1980-05-21"
+				},
+				{
+					name: "Return of the Jedi",
+					date: "1983-05-25"
+				}
+			]
+		};
+
+		var t = Timeframe("#timeframe")
+			.addCategory(starWarsFilms)
+			.start("1975-01-01")
+			.end("1985-01-01")
+			.draw();
+
+		</script>
+
+	</body>
+</html>
