@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+	<head>
+		<title>Example: US Presidents</title>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+
+		<div id="container">
+			<h1>Example: US Presidents</h1>
+
+			<div id="timeframe"></div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="/lib/timeframe.js"></script>
+		<script>
+
+		var presidents = {
+			name: "US Presidents",
+			color: "#000000",
+			spans: [
+				{
+					name: "George Washington",
+					start: "1789-04-30",
+					end: "1797-03-04"
+				},
+				{
+					name: "John Adams",
+					start: "1797-03-04",
+					end: "1801-03-04"
+				},
+				{
+					name: "Thomas Jefferson",
+					start: "1801-03-04",
+					end: "1809-03-04"
+				},
+				{
+					name: "James Madison",
+					start: "1809-03-04",
+					end: "1817-03-04"
+				},
+				{
+					name: "James Monroe",
+					start: "1817-03-04",
+					end: "1825-03-04"
+				}
+			]
+		};
+
+		var t = Timeframe("#timeframe")
+			.addCategory(presidents)
+			.start("1787-01-01")
+			.end("1826-01-01")
+			.majorTicks(5, "years")
+			.minorTicks(1, "year")
+			.draw();
+
+		</script>
+
+	</body>
+</html>
